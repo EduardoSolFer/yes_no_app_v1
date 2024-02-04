@@ -16,7 +16,7 @@ class MessageFieldBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(50));
 
     final inputDecoration = InputDecoration(
-        hintText: 'Write your message',
+        hintText: 'Write your message...',
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         filled: true,
@@ -32,7 +32,7 @@ class MessageFieldBox extends StatelessWidget {
 
     return TextFormField(
       onTapOutside: (event) {
-        //Si presiono fuera de el teclado pierde el foco
+        //Si presiono fuera de el teclado se pierde el foco
         focusNode.unfocus();
       },
       focusNode: focusNode,
@@ -41,7 +41,7 @@ class MessageFieldBox extends StatelessWidget {
       onFieldSubmitted: (value) {
         onValue(value);
         textController.clear(); //Limpará el teclado cada que se envíe un comentario
-        focusNode.requestFocus(); //Miestras este escribiendo el teclado mntendráe l foco
+        focusNode.requestFocus(); //Miestras este escribiendo el teclado mantendrá el foco
       },
     );
   }
